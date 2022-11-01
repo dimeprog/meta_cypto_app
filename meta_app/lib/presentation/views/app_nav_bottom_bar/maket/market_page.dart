@@ -15,7 +15,7 @@ class _MarketPageState extends ConsumerState<MarketPage> {
     return AppScaffold(
       drawer: Container(),
       body: Column(
-        children: [],
+        children: [Text('Market')],
       ),
     );
   }
