@@ -3,10 +3,8 @@ import 'package:flutter/services.dart';
 
 class AppScaffold extends StatelessWidget {
   final Widget body;
-  const AppScaffold({
-    super.key,
-    required this.body,
-  });
+  final Widget drawer;
+  const AppScaffold({super.key, required this.body, required this.drawer});
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +16,8 @@ class AppScaffold extends StatelessWidget {
           statusBarColor: Color(0xff78C223),
         ),
       ),
-      body: body,
+      drawer: drawer,
+      body: Container(color: const Color(0xff78C223), child: body),
     );
   }
 }
