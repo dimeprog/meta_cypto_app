@@ -14,6 +14,7 @@ class CoinRepository {
       final response = await api.getData('/coins/list?include_platform=false');
       final List<Coin> coinList =
           (response as List).map((e) => Coin.fromJson(e)).toList();
+      // print(coinList);
       return coinList;
     } on SocketException catch (err) {
       throw AppException(message: 'No internet connection');

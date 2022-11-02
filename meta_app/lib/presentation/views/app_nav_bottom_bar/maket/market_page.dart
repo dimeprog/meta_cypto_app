@@ -17,32 +17,25 @@ class MarketPage extends ConsumerStatefulWidget {
 class _MarketPageState extends ConsumerState<MarketPage> {
   @override
   Widget build(BuildContext context) {
-    // ref.watch(coinListProvider);
-    final state = ref.watch(coinControllerProvider.notifier).state;
+    // ref.read(coinControllerProvider.notifier).getCoins();
+    // ref.read(coinListProvider);
+    final coinAsync = ref.watch(futureCoinProvider);
 
     return AppScaffold(
       drawer: const AppEndDrawer(),
-      body: Column(
-        children: [
-          if (state is CoinStateInital)
-            const Center(
-              child: Text('No data yet'),
-            ),
-          if (state is CoinStateLoading)
-            const Center(
-              child: CircularProgressIndicator(),
-            ),
-          if (state is CoinStateError)
-            Center(
-              child: Text(state.errorMessage),
-            ),
-          if (state is CoinStateSuccess)
-            ListView.builder(
-              itemBuilder: (context, index) =>
-                  CoinTile(coins: state.coinList[index]),
-              itemCount: 100,
-            ),
-        ],
+      body: coinAsync.when(
+        data: (coinList) {
+          return ListView.builder(
+            itemBuilder: (context, index) => CoinTile(coins: coinList[index]),
+            itemCount: 100,
+          );
+        },
+        error: (error, _) {
+          return Center(child: Text(error.toString()));
+        },
+        loading: () => const Center(
+          child: CircularProgressIndicator(),
+        ),
       ),
     );
   }
@@ -55,6 +48,7 @@ class CoinTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      margin: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
       color: Colors.grey,
       height: 70,
       width: 100,

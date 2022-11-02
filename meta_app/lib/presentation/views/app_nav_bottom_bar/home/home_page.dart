@@ -7,6 +7,7 @@ import 'package:meta_app/presentation/Resources/font_manager.dart';
 import 'package:meta_app/presentation/Resources/style_manager.dart';
 import 'package:meta_app/presentation/views/app_nav_bottom_bar/home/detail_container.dart';
 import 'package:meta_app/presentation/views/app_nav_bottom_bar/home/end_drawer.dart';
+import 'package:meta_app/presentation/views/login/login_page.dart';
 
 class Homepage extends ConsumerWidget {
   Homepage({super.key});
@@ -45,11 +46,17 @@ class Homepage extends ConsumerWidget {
                         const SizedBox(
                           width: 8,
                         ),
-                        Text(
-                          'Login/Register',
-                          style: getBoldTextStyle(
-                              color: ColorManager.dark,
-                              fontSize: FontSizeManager.s18),
+                        InkWell(
+                          onTap: () {
+                            Navigator.of(context).push(MaterialPageRoute(
+                                builder: (context) => const LoginPage()));
+                          },
+                          child: Text(
+                            'Login/Register',
+                            style: getBoldTextStyle(
+                                color: ColorManager.dark,
+                                fontSize: FontSizeManager.s18),
+                          ),
                         ),
                         Expanded(child: Container()),
                         IconButton(
