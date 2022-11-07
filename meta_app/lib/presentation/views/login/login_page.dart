@@ -4,11 +4,11 @@ import 'package:meta_app/app/widgets/app_scaffold.dart';
 import 'package:meta_app/app/widgets/app_textfield.dart';
 import 'package:meta_app/app/widgets/custom_widget.dart';
 import 'package:meta_app/app/Resources/color_manager.dart';
-import 'package:meta_app/app/Resources/font_manager.dart';
 import 'package:meta_app/app/Resources/style_manager.dart';
 import 'package:meta_app/presentation/view_models/auth_contoller.dart';
 import 'package:meta_app/presentation/views/register/register_page.dart';
 import '../../../app/Resources/dimensions.dart';
+import '../../Resources/font_manager.dart';
 
 class LoginPage extends StatefulHookConsumerWidget {
   const LoginPage({super.key});

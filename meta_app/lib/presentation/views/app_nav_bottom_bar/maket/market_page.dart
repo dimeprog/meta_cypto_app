@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:meta_app/app/widgets/app_scaffold.dart';
 import 'package:meta_app/presentation/state/coin_state.dart';
-import 'package:meta_app/app/Resources/color_manager.dart';
-import 'package:meta_app/app/Resources/style_manager.dart';
-import 'package:meta_app/presentation/view_models/coin_controllers.dart';
-import 'package:meta_app/presentation/views/app_nav_bottom_bar/home/end_drawer.dart';
 
+import 'package:meta_app/presentation/view_models/coin_controllers.dart';
+
+import '../../../../app/Resources/color_manager.dart';
+import '../../../../app/widgets/Resources/style_manager.dart';
 import '../../../../domian/models/coin.dart';
 
 class MarketPage extends ConsumerStatefulWidget {

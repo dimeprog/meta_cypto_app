@@ -6,8 +6,8 @@ import '../../../app/widgets/app_scaffold.dart';
 import '../../../app/widgets/app_textfield.dart';
 import '../../../app/widgets/custom_widget.dart';
 import '../../../app/Resources/color_manager.dart';
-import '../../../app/Resources/font_manager.dart';
 import '../../../app/Resources/style_manager.dart';
+import '../../Resources/font_manager.dart';
 import '../../view_models/auth_contoller.dart';
 
 class RegisterPage extends ConsumerStatefulWidget {

@@ -2,7 +2,7 @@
 
 import 'package:flutter/cupertino.dart';
 
-import 'font_manager.dart';
+import '../../presentation/Resources/font_manager.dart';
 
 TextStyle _getTextStye({
   double fontSize = FontSizeManager.s12,
