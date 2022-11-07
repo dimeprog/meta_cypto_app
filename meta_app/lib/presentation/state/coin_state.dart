@@ -1,6 +1,6 @@
 import 'package:equatable/equatable.dart';
 
-import '../models/coin.dart';
+import '../../domian/models/coin.dart';
 
 class CoinState extends Equatable {
   const CoinState();
@@ -11,6 +11,8 @@ class CoinState extends Equatable {
 class CoinStateSuccess extends CoinState {
   final List<Coin> coinList;
   const CoinStateSuccess(this.coinList);
+
+  List<Coin> get coins => coinList;
   @override
   List<Object?> get props => [];
 }

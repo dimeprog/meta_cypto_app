@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'dart:io';
 
 import 'package:meta_app/app/widgets/app_exception.dart';
@@ -16,6 +17,9 @@ class CoinRepository {
           (response as List).map((e) => Coin.fromJson(e)).toList();
       // print(coinList);
       return coinList;
+    } on TimeoutException catch (err) {
+      print(err.message);
+      throw AppException(message: 'Service timeout, check internet connection');
     } on SocketException catch (err) {
       throw AppException(message: 'No internet connection');
     } catch (err) {

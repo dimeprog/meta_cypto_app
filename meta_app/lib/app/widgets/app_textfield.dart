@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:meta_app/presentation/Resources/color_manager.dart';
+import 'package:meta_app/app/Resources/color_manager.dart';
 
 class AppTextField extends StatelessWidget {
   final TextEditingController controller;

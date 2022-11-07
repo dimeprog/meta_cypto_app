@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:meta_app/presentation/Resources/color_manager.dart';
+import 'package:meta_app/app/Resources/color_manager.dart';
 import 'package:meta_app/presentation/views/app_nav_bottom_bar/account/account_page.dart';
 import 'package:meta_app/presentation/views/app_nav_bottom_bar/home/home_page.dart';
 import 'package:meta_app/presentation/views/app_nav_bottom_bar/maket/market_page.dart';
@@ -29,7 +29,7 @@ class _AppNavBottomBarState extends State<AppNavBottomBar> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: ColorManager.bodyLight,
+      // backgroundColor: ColorManager.bodyLight,
       body: pages[curIndex],
       bottomNavigationBar: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 2.0),
@@ -39,13 +39,15 @@ class _AppNavBottomBarState extends State<AppNavBottomBar> {
             topRight: Radius.circular(50.0),
           ),
           child: Container(
-            height: 120,
+            height: 90,
             child: BottomNavigationBar(
                 type: BottomNavigationBarType.shifting,
                 selectedItemColor: Colors.black,
                 unselectedItemColor: Colors.grey,
-                selectedLabelStyle: TextStyle(fontWeight: FontWeight.w700),
-                unselectedLabelStyle: TextStyle(fontWeight: FontWeight.w500),
+                selectedLabelStyle:
+                    const TextStyle(fontWeight: FontWeight.w700),
+                unselectedLabelStyle:
+                    const TextStyle(fontWeight: FontWeight.w500),
                 onTap: (val) {
                   setPage(val);
                 },

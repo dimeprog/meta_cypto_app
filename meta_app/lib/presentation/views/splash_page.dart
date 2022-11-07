@@ -3,7 +3,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:meta_app/app/widgets/app_scaffold.dart';
-import 'package:meta_app/presentation/Resources/color_manager.dart';
+import 'package:meta_app/app/Resources/color_manager.dart';
 import 'package:meta_app/presentation/views/app_nav_bottom_bar/app_navBar.dart';
 import 'package:meta_app/presentation/views/app_nav_bottom_bar/home/home_page.dart';
 import 'package:meta_app/presentation/views/login/login_page.dart';

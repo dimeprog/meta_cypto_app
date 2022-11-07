@@ -9,7 +9,7 @@ class Api {
   // get method
   Future<dynamic> getData(String apiPath) async {
     final url = Uri.parse(BASEURL + apiPath);
-    final result = await http.get(url);
+    final result = await http.get(url).timeout(const Duration(seconds: 15));
     return processResponse(result);
   }
 
@@ -17,8 +17,9 @@ class Api {
   Future<dynamic> postData(
       String apiPath, dynamic body, dynamic headers) async {
     final url = Uri.parse(BASEURL + apiPath);
-    final result =
-        await http.post(url, body: json.encode(body), headers: headers);
+    final result = await http
+        .post(url, body: json.encode(body), headers: headers)
+        .timeout(const Duration(seconds: 15));
     return processResponse(result);
   }
   // put method
