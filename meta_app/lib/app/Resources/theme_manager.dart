@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:meta_app/presentation/Resources/style_manager.dart';
-import 'package:meta_app/presentation/Resources/values_manager.dart';
 
+import '../../presentation/Resources/font_manager.dart';
+import '../../presentation/Resources/values_manager.dart';
+import '../widgets/Resources/style_manager.dart';
 import 'color_manager.dart';
-import 'font_manager.dart';
 
 ThemeData getApplicationTheme() {
   return ThemeData(
@@ -12,7 +12,7 @@ ThemeData getApplicationTheme() {
     primaryColorLight: ColorManager.darkGrey,
     primaryColorDark: ColorManager.darkPrimary,
     disabledColor: ColorManager.grey1,
-    accentColor: ColorManager.grey,
+
     // card view  theme
     cardTheme: CardTheme(
       color: ColorManager.white,
@@ -31,7 +31,7 @@ ThemeData getApplicationTheme() {
     //  elevated button
     elevatedButtonTheme: ElevatedButtonThemeData(
       style: ElevatedButton.styleFrom(
-          primary: ColorManager.primary,
+          primary: ColorManager.topPrimary,
           elevation: AppSize.s4,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(

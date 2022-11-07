@@ -1,11 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:meta_app/app/Resources/theme_manager.dart';
 import 'package:meta_app/presentation/views/splash_page.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'firebase_options.dart';
 
-import 'app/app.dart';
-
-void main() {
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
   runApp(
     const ProviderScope(
       child: MyApp(),
@@ -16,14 +20,12 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
+      debugShowCheckedModeBanner: false,
+      title: 'Meta',
+      theme: getApplicationTheme(),
       home: const SplashPage(),
     );
   }
